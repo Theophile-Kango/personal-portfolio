@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.main section{
+    display: flex;
+}
+
+.main section aside{
+    width: 30%;
+    position: fixed;
+    min-height: 100vh;
+    background: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main section aside h3{
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(56, 52, 52);
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+.main section aside img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.main section aside p{
+    padding: 30px;
+    line-height: 1.5em;
+    font-weight: normal;
+    color: rgb(56, 52, 52);
+    text-align: justify;
+}
+
+.main section aside footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main section aside footer ul{
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.main section aside footer ul li{
+    list-style: none;
+}
+
+.main section aside footer ul li a{
+    color: rgb(56, 52, 52);
+    font-size: 1.5em;
+}
+
+.main section aside footer ul li a:hover{
+    color: rgb(115, 115, 228);
+}
