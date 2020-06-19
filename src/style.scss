@@ -5,6 +5,7 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
+  font-size: 1.12em;
 }
 
 $blue: #758ab8;
@@ -24,7 +25,7 @@ $grey: #ccc;
       justify-content: center;
       h3 {
         text-align: center;
-        font-size: 1.4em;
+        font-size: 1.7em;
         color: $blue;
         font-weight: bold;
         line-height: 1.2em;
@@ -37,10 +38,11 @@ $grey: #ccc;
       }
 
       .skills{
-        margin-left: 20px;
-        margin-bottom: 20px;
+        margin-left: 30px;
+        margin-bottom: 30px;
         button{
           margin: 2px 5px;
+          
           padding: 0 10px;
           background: $grey;
           &:hover{
@@ -108,17 +110,21 @@ $grey: #ccc;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      margin-top: 30px;
       width: 100%;
       
       img{
         object-fit: cover;
-        width: 80%;
+        width: 100%;
         cursor: pointer;
       }
+      #bot{
+        height: 80vh;
+      }
+      #matching{
+        height: 80vh;
+      }
       #mobile{
-        width: 30%;
+        width: 70%;
       }
       // div {
       //   background: #ddd;
