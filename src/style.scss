@@ -7,10 +7,14 @@
   box-sizing: border-box;
 }
 
+$blue: #5879e6;
+$green: #ccc;
+
 .main {
   section {
   display: flex;
     aside {
+      background: #eee;
       width: 30%;
       position: fixed;
       min-height: 100vh;
@@ -20,18 +24,31 @@
       justify-content: center;
       h3 {
         text-align: center;
-        margin-bottom: 20px;
-        color: rgb(56, 52, 52);
+        font-size: 1.4em;
+        color: $blue;
         font-weight: bold;
-        line-height: 1.5em;
+        line-height: 1.2em;
       }
       
       p {
-        padding: 30px;
+        padding: 10px 30px;
         line-height: 1.5em;
         font-weight: normal;
       }
 
+      .skills{
+        margin-left: 20px;
+        margin-bottom: 20px;
+        button{
+          margin: 2px 5px;
+          padding: 0 10px;
+          background: $green;
+          &:hover{
+            background: $blue;
+            color: $green;
+          }
+        }
+      }
       footer {
         width: 100%;
         display: flex;
@@ -40,7 +57,7 @@
         justify-content: center;
         ul {
           display: flex;
-          width: 40%;
+          width: 60%;
           justify-content: space-between;
           li {
             list-style: none;
@@ -59,33 +76,31 @@
   article{
     display: flex;
     position: absolute;
+    min-height: 100vh;
     right: 0;
     width: 70%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #ddd;
+   
     section{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #758ab8;
       width: 100%;
       min-height: 95vh;
       margin: 10px 0;
-      &:hover {
-        display: none;
-      }
+     
       div, 
       img {
         position: absolute;
         cursor: pointer;
       }
       img{
-        object-fit: contain;
-        width: 600px;
-        height: 600px;
+        object-fit: container;
+        width: 300px;
+        height: 300px;
       }
       div {
         background: #ddd;
