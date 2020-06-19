@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-$blue: #5879e6;
+$blue: #758ab8;
 $green: #ccc;
 
 .main {
@@ -65,7 +65,7 @@ $green: #ccc;
               color: rgb(56, 52, 52);
               font-size: 1.5em;
               &:hover {
-                color: #758ab8;
+                color: $blue;
               }
             }
           }
@@ -79,35 +79,56 @@ $green: #ccc;
     min-height: 100vh;
     right: 0;
     width: 70%;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-   
+
+    menu{
+      position: fixed;
+      top: 0;
+      padding-top: 10px;
+      background: white;
+      width: 70%;
+      text-align: center;
+      height: 65px;
+      button{
+        padding: 8px 20px;
+        color: white;
+        background: $blue;
+        border-radius: 30px;
+        &:hover{
+          background: $green;
+          color: black;
+        }
+      }
+    }
+
     section{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 100%;
       min-height: 95vh;
-      margin: 10px 0;
-     
-      div, 
-      img {
-        position: absolute;
+      width: 100%;
+      //div, 
+      // img {
+      //   position: absolute;
+      //   cursor: pointer;
+      // }
+      img{
+        object-fit: cover;
+        width: 80%;
         cursor: pointer;
       }
-      img{
-        object-fit: container;
-        width: 300px;
-        height: 300px;
+      #mobile{
+        width: 30%;
       }
-      div {
-        background: #ddd;
-        color: rgb(56, 52, 52);
-        width: 250px;
-        height: 300px;
-      }
+      // div {
+      //   background: #ddd;
+      //   color: rgb(56, 52, 52);
+      //   width: 250px;
+      //   height: 300px;
+      // }
       .details{
         ul{
           li{
