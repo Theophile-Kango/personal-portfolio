@@ -2,6 +2,7 @@
 
 $blue: #1b1d22;
 $grey: #ccc;
+
 @mixin menu {
   position: fixed;
   top: 0;
@@ -21,9 +22,47 @@ $grey: #ccc;
       color: black;
     }
   }
+
   .active{
     background: $grey;
     color: black;
+  }
+}
+
+@mixin skills {
+  margin-left: 30px;
+    margin-bottom: 30px;
+    button{
+      margin: 2px 5px; 
+      padding: 0 10px;
+      background: $grey;
+      &:hover{
+        background: $blue;
+        color: $grey;
+      }
+    }
+}
+
+@mixin footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  ul {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    li {
+      list-style: none;
+      a {
+        color: rgb(56, 52, 52);
+        font-size: 1.5em;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
   }
 }
 
@@ -38,13 +77,43 @@ $grey: #ccc;
 
 .main {
   #header{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     menu{
       @include menu();
       width: 100%;
     }
   }
-  
+  #skill{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    @include skills();
+    button{
+      padding: 5px 20px;
+    }
+
+    footer{
+      @include footer();
+      ul{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        width: 200px;
+      }
+    }
+
+    ul{
+      display: flex;
+      margin-top: 10px;;
+      flex-direction: column;
+      li{
+        font-size: .9em;
+      }
+    }
+  }
   .embed{
     width: 100%;
     height: 95vh;
@@ -74,40 +143,10 @@ $grey: #ccc;
       }
 
       .skills{
-        margin-left: 30px;
-        margin-bottom: 30px;
-        button{
-          margin: 2px 5px;
-          
-          padding: 0 10px;
-          background: $grey;
-          &:hover{
-            background: $blue;
-            color: $grey;
-          }
-        }
+        @include skills();
       }
       footer {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        ul {
-          display: flex;
-          width: 60%;
-          justify-content: space-between;
-          li {
-            list-style: none;
-            a {
-              color: rgb(56, 52, 52);
-              font-size: 1.5em;
-              &:hover {
-                color: $blue;
-              }
-            }
-          }
-        }
+        @include footer();
       }
     }
   }

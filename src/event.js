@@ -3,6 +3,7 @@ export const event = () => {
     const menu = document.querySelector('#menu');
     const header = document.querySelector('#header');
     const embed = document.querySelector('.embed');
+    const skill = document.querySelector('#skill');
 
     const mainSection = document.querySelector('.main-section');
     const details = document.querySelector('.details');
@@ -28,22 +29,25 @@ export const event = () => {
         switch (value.textContent) {
             case (projects.textContent):
                 embed.classList.add('d-none');
+                skill.classList.add('d-none');
                 classEffect([projects, skills, resume], 'active');
                 break;
             case (skills.textContent):
                 embed.classList.add('d-none');
+                skill.classList.remove('d-none');
                 classEffect([skills, projects, resume], 'active');
                 break;
             case (resume.textContent):
                 classEffect([resume, projects, skills], 'active');
+                skill.classList.add('d-none');
                 embed.classList.remove('d-none');
-                //alert('resume');
                 break;
         }
     }
 
     portfolio.addEventListener('click', () => {
         embed.classList.add('d-none');
+        skill.classList.add('d-none');
         classEffect([header, mainSection, details], 'd-none');
     });
 
