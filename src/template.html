@@ -9,8 +9,17 @@
     <title>Personal Porfolio</title>
   </head>
   <body>
+
     <div class="main">
-      <section>
+      <header id="header" class="d-none">
+        <menu>
+            <button id="portfolio">Portfolio</button>
+            <button>Projects</button>
+            <button>Skills</button>
+            <button>Resume</button>
+        </menu>
+      </header>
+      <section class="main-section">
           <aside>
               <h3>Theophile Kango<br/>
                 Full Stack Software Developer</h3>
@@ -59,11 +68,12 @@
               </footer>
           </aside>
       </section>
-      <article>
-        <menu>
+      <article class="details">
+        <menu id="menu">
           <button>Portfolio</button>
-          <button>Projects</button>
-          <button>Skills</button>
+          <button class="action">Projects</button>
+          <button class="action">Skills</button>
+          <button class="action">Resume</button>
         </menu>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->

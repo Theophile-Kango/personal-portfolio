@@ -1,5 +1,29 @@
 @import "~bootstrap/scss/bootstrap";
 
+$blue: #1b1d22;
+$grey: #ccc;
+@mixin menu {
+  position: fixed;
+  top: 0;
+  padding-top: 10px;
+  background: white;
+  width: 70%;
+  text-align: center;
+  height: 65px;
+  button{
+    padding: 8px 20px;
+    color: white;
+    background: $blue;
+    border-radius: 30px;
+    outline: none;
+    &:hover{
+      background: $grey;
+      color: black;
+    }
+  }
+  
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,14 +32,15 @@
   font-size: 1.12em;
 }
 
-$blue: #758ab8;
-$grey: #ccc;
-
 .main {
+  
+  menu{
+    @include menu();
+    width: 100%;
+  }
   section {
   display: flex;
     aside {
-      background: #eee;
       width: 30%;
       position: fixed;
       min-height: 100vh;
@@ -25,7 +50,7 @@ $grey: #ccc;
       justify-content: center;
       h3 {
         text-align: center;
-        font-size: 1.7em;
+        font-size: 1.6em;
         color: $blue;
         font-weight: bold;
         line-height: 1.2em;
@@ -86,25 +111,9 @@ $grey: #ccc;
     justify-content: center;
 
     menu{
-      position: fixed;
-      top: 0;
-      padding-top: 10px;
-      background: white;
-      width: 70%;
-      text-align: center;
-      height: 65px;
-      button{
-        padding: 8px 20px;
-        color: white;
-        background: $blue;
-        border-radius: 30px;
-        &:hover{
-          background: $grey;
-          color: black;
-        }
-      }
+      @include menu();
     }
-
+  
     section{
       display: flex;
       flex-direction: column;

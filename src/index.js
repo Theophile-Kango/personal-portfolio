@@ -3,14 +3,15 @@ import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 import './style.scss';
+import { event } from './event.js'
 
-bot.addEventListener(('click'),()=>{
-    alert('bot');
-})
 
-// function component() {
-  
-// }
+const main = () => {
+  event();
+}
+
+main();
+
 
 // const content = document.querySelector('#content');
 // content.appendChild(component());
