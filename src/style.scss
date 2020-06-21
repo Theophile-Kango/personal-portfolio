@@ -21,7 +21,10 @@ $grey: #ccc;
       color: black;
     }
   }
-  
+  .active{
+    background: $grey;
+    color: black;
+  }
 }
 
 * {
