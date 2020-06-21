@@ -4,7 +4,7 @@ export const event = () => {
     const header = document.querySelector('#header');
     const embed = document.querySelector('.embed');
     const skill = document.querySelector('#skill');
-
+    const myProject = document.querySelector('.my-projects');
     const mainSection = document.querySelector('.main-section');
     const details = document.querySelector('.details');
     const portfolio = document.querySelector('#portfolio');
@@ -30,10 +30,12 @@ export const event = () => {
             case (projects.textContent):
                 embed.classList.add('d-none');
                 skill.classList.add('d-none');
+                myProject.classList.remove('d-none');
                 classEffect([projects, skills, resume], 'active');
                 break;
             case (skills.textContent):
                 embed.classList.add('d-none');
+                myProject.classList.add('d-none');
                 skill.classList.remove('d-none');
                 classEffect([skills, projects, resume], 'active');
                 break;
@@ -41,6 +43,7 @@ export const event = () => {
                 classEffect([resume, projects, skills], 'active');
                 skill.classList.add('d-none');
                 embed.classList.remove('d-none');
+                myProject.classList.add('d-none');
                 break;
         }
     }
@@ -48,6 +51,7 @@ export const event = () => {
     portfolio.addEventListener('click', () => {
         embed.classList.add('d-none');
         skill.classList.add('d-none');
+        myProject.classList.add('d-none');
         classEffect([header, mainSection, details], 'd-none');
     });
 
