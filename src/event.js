@@ -6,42 +6,45 @@ export const event = () => {
     const mainSection = document.querySelector('.main-section');
     const details = document.querySelector('.details');
     const portfolio = document.querySelector('#portfolio');
-    const projects = document.querySelector('#projects');
-    const skills = document.querySelector('#skills');
-    const resume = document.querySelector('#resume');
 
-    //const dNone = document.querySelector('.d-none');
+    const myItems = {
+        projects: document.querySelector('#projects'),
+        skills: document.querySelector('#skills'),
+        resume: document.querySelector('#resume')
+    }
+
     menu.querySelectorAll('.action').forEach(element => {
         element.addEventListener('click', () => {
-            if (element.textContent == "Projects"){
-                classEffect([projects, skills, resume], 'active')
-            }else if(element.textContent == "Skills"){
-                classEffect([skills, projects, resume], 'active');
-            }else if(element.textContent == "Resume"){
-                classEffect([resume, skills, projects], 'active');
-            }
+            effect(myItems, element);
             header.classList.remove('d-none');
             mainSection.classList.add('d-none');
             details.classList.add('d-none');
         })
     });
 
+    const effect = ({projects, skills, resume}, value) => {
+        switch (value.textContent) {
+            case (projects.textContent):
+                classEffect([projects, skills, resume], 'active');
+                break;
+            case (skills.textContent):
+                classEffect([skills, projects, resume], 'active');
+                break;
+            case (resume.textContent):
+                classEffect([resume, projects, skills], 'active');
+                break;
+        }
+    }
+
     portfolio.addEventListener('click', () => {
-        classEffect([portfolio, mainSection, details], 'd-none');
+        classEffect([header, mainSection, details], 'd-none');
     });
 
-    projects.addEventListener('click', () => {
-        classEffect([projects, skills, resume], 'active');
+    Object.values(myItems).forEach(item => {
+        item.addEventListener('click', () => {
+            effect(myItems, item);
+        }); 
     });
-
-    skills.addEventListener('click', () => {
-        classEffect([skills, projects, resume], 'active');
-    });
-
-    resume.addEventListener('click', () => {
-        classEffect([resume, skills, projects], 'active');
-    });
-
 }
 
 const classEffect = (addRemove, name) => {
