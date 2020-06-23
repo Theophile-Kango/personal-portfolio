@@ -28,6 +28,7 @@ export const event = () => {
        
         switch (value.textContent) {
             case (projects.textContent):
+                
                 embed.classList.add('d-none');
                 skill.classList.add('d-none');
                 myProject.classList.remove('d-none');
