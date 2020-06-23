@@ -76,6 +76,13 @@ $grey: #ccc;
 }
 
 .main {
+  
+  min-width: 100%;
+  border: 1 px solid black;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
   #header{
     margin-bottom: 10px;
     menu{
@@ -83,7 +90,9 @@ $grey: #ccc;
       width: 100%;
     }
   }
+
   #skill{
+    width: 100%;
     margin-top: 80px;
     display: flex;
     flex-direction: column;
@@ -150,65 +159,142 @@ $grey: #ccc;
       }
     }
   }
+  .my-projects{
+    display: flex; 
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: .9em;
+    min-height: 100vh;
+    nav{
+      display: flex;
+      justify-content: center;
+      position: fixed; 
+      bottom: 0px;
+      width: 100%;
+      ul{
+        border-radius: 50px;
+        border: 2px solid $grey;
+        li{
+          a{
+            background: $blue;
+            color: white;
+            border: none;
+            &:hover{
+              color: $blue;
+              background: $grey;
+            }
+          }
+          .active{
+            color: $blue;
+            background: $grey;
+          }
+          a:nth-child(1){
+            border-right: 1px solid $grey;
+          }
+          .num{
+            border-left: 1px solid $grey;
+            border-right: 1px solid $grey;
+          }
+        }
+      }
+    }
+  }
   article{
     display: flex;
-    position: absolute;
     min-height: 100vh;
-    right: 0;
     width: 70%;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-
+  
+    .carousel{
+      //background-color: $blue;
+      width: 70%;
+      background: $grey;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 70px;
+      min-height: calc(100vh- 70px);
+      a{
+        display: flex;
+        justify-content: center;
+        //background: $grey;
+        span{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          color:  $grey;
+          background-color: $blue;
+        }
+        .glyphicon-chevron-left{
+          position: fixed;
+          left: 32%;
+        }
+        .glyphicon-chevron-right{
+          position: fixed;
+          right: 2%;
+        }
+      }
+    }
     menu{
       @include menu();
     }
-  
-    section{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      
-      img{
-        object-fit: cover;
-        width: 100%;
-        cursor: pointer;
-      }
-      #bot{
-        height: 80vh;
-      }
-      #matching{
-        height: 80vh;
-      }
-      #mobile{
-        width: 70%;
-      }
-      // div {
-      //   background: #ddd;
-      //   color: rgb(56, 52, 52);
-      //   width: 250px;
-      //   height: 300px;
-      // }
-      .details{
-        ul{
-          li{
-            list-style: none;
-            a {
-              color: #758ab8;
-              i{
-                font-size: 1.5em;
+  .others{
+    width: 100%;
+    height: 100vh; 
+      section{ 
+       
+        img{
+          margin-top: 50px;
+          margin-left: 100px;
+          object-fit: cover;
+          width: 80%;
+          height: 100%;
+          cursor: pointer;
+        }
+        
+        #mobile{
+          margin-left: 300px;
+          width: 30%;
+        }
+
+        .matching{
+          margin-left: 180px;
+          width: 60%;
+        }
+        // div {
+        //   background: #ddd;
+        //   color: rgb(56, 52, 52);
+        //   width: 250px;
+        //   height: 300px;
+        // }
+        .details{
+          ul{
+            li{
+              list-style: none;
+              a {
+                color: #758ab8;
+                i{
+                  font-size: 1.5em;
+                }
               }
             }
           }
-        }
-        h2{
-            padding: 10px;
-            text-align: center;
+          h2{
+              padding: 10px;
+              text-align: center;
+            }
           }
         }
-      }
+      
+    }
+   
     }
   }
 

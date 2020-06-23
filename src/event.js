@@ -28,7 +28,7 @@ export const event = () => {
        
         switch (value.textContent) {
             case (projects.textContent):
-                
+                numActive();
                 embed.classList.add('d-none');
                 skill.classList.add('d-none');
                 myProject.classList.remove('d-none');
@@ -67,4 +67,22 @@ const classEffect = (addRemove, name) => {
     const [first, ...last] = addRemove;
     first.classList.add(name);
     last.forEach(elt => elt.classList.remove(name));
+}
+
+const numActive = () => {
+    const num = document.querySelectorAll('.page-link');
+    const prev = document.querySelector('#prev');
+    const next = document.querySelector('#next');
+
+    num.forEach(elt => {
+        elt.addEventListener(('click'), () => {
+            elt.classList.add('active');
+            num.forEach(item => {
+                if (item.textContent != elt.textContent){
+                    item.classList.remove('active');
+                }
+            })
+            //alert(elt.textContent);
+        })
+    })
 }
