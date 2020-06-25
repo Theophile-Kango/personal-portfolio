@@ -64,7 +64,15 @@ const classEffect = (addRemove, name, test=true) => {
         first.classList.remove(name);
         last.forEach(elt => elt.classList.add(name));
     }
-   
+}
+
+const otherElements = (element, value) => {
+    value.classList.add('active');
+    element.forEach(item => {
+        if (item.textContent != value.textContent){
+            item.classList.remove('active');
+        }
+    })
 }
 
 const numActive = (current) => {
@@ -72,6 +80,7 @@ const numActive = (current) => {
     const prev = document.querySelector('#prev');
     const next = document.querySelector('#next');
     const [first,...last] = num;
+    first.click();
     first.classList.add('active');
     next.setAttribute('href',first.getAttribute('href'));
     prev.setAttribute('href',num[num.length - 1].getAttribute('href'));
@@ -80,13 +89,8 @@ const numActive = (current) => {
 
     num.forEach(elt => {
         elt.addEventListener(('click'), () => {
-            elt.classList.add('active');
             current = Number(elt.textContent);
-            num.forEach(item => {
-                if (item.textContent != elt.textContent){
-                    item.classList.remove('active');
-                }
-            })
+            otherElements(num, elt);
         })
     })
 
@@ -96,8 +100,8 @@ const numActive = (current) => {
         
         num.forEach(elt =>{
             if(elt.textContent == current) {
-                elt.click();
                 next.setAttribute('href',elt.getAttribute('href'));
+                otherElements(num, elt);
             }
         })
     })
@@ -107,8 +111,8 @@ const numActive = (current) => {
         if (current <= 0) current = 5
         num.forEach(elt => {
             if(elt.textContent == current){
-                elt.click();
                 prev.setAttribute('href',elt.getAttribute('href'));
+                otherElements(num, elt);
             }
         })
     })
