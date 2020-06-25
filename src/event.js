@@ -70,19 +70,44 @@ const classEffect = (addRemove, name) => {
 }
 
 const numActive = () => {
-    const num = document.querySelectorAll('.page-link');
+    const num = document.querySelectorAll('.num');
     const prev = document.querySelector('#prev');
     const next = document.querySelector('#next');
+    let current = 1;
 
     num.forEach(elt => {
         elt.addEventListener(('click'), () => {
             elt.classList.add('active');
+            current = Number(elt.textContent);
             num.forEach(item => {
                 if (item.textContent != elt.textContent){
                     item.classList.remove('active');
                 }
             })
             //alert(elt.textContent);
+        })
+    })
+
+    next.addEventListener(('click'),() => {
+        current += 1;
+        if (current == 6) current = 1
+        
+        num.forEach(elt =>{
+            if(elt.textContent == current) {
+                elt.click();
+                next.setAttribute('href',elt.getAttribute('href'));
+            }
+        })
+    })
+
+    prev.addEventListener(('click'),() => {
+        current -= 1;
+        if (current <= 0) current = 5
+        num.forEach(elt => {
+            if(elt.textContent == current){
+                elt.click();
+                prev.setAttribute('href',elt.getAttribute('href'));
+            }
         })
     })
 }
