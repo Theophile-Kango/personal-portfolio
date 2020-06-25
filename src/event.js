@@ -26,7 +26,7 @@ export const event = () => {
        
         switch (value.textContent) {
             case (projects.textContent):
-                numActive();
+                numActive(1);
                 classEffect([myProject, embed, skill], 'd-none', false);
                 classEffect([projects, skills, resume], 'active');
                 break;
@@ -67,11 +67,16 @@ const classEffect = (addRemove, name, test=true) => {
    
 }
 
-const numActive = () => {
+const numActive = (current) => {
     const num = document.querySelectorAll('.num');
     const prev = document.querySelector('#prev');
     const next = document.querySelector('#next');
-    let current = 0;
+    const [first,...last] = num;
+    first.classList.add('active');
+    next.setAttribute('href',first.getAttribute('href'));
+    prev.setAttribute('href',num[num.length - 1].getAttribute('href'));
+
+    last.forEach(elt => elt.classList.remove('active'));
 
     num.forEach(elt => {
         elt.addEventListener(('click'), () => {

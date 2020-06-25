@@ -76,8 +76,8 @@ $grey: #ccc;
 }
 
 .main {
-  
   min-width: 100%;
+  min-height: 100vh;
   border: 1 px solid black;
   display: flex;
   justify-content: space-between;
@@ -209,7 +209,6 @@ $grey: #ccc;
     justify-content: center;
   
     .carousel{
-      //background-color: $blue;
       width: 70%;
       background: $grey;
       position: absolute;
@@ -249,7 +248,7 @@ $grey: #ccc;
       section{  
         img{
           margin-top: 20vh;
-          margin-left: 100px;
+          margin-left: 10%;
           object-fit: cover;
           width: 80%;
           height: 100%;
