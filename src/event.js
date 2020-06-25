@@ -18,9 +18,7 @@ export const event = () => {
     menu.querySelectorAll('.action').forEach(element => {
         element.addEventListener('click', () => {
             effect(myItems, element);
-            header.classList.remove('d-none');
-            mainSection.classList.add('d-none');
-            details.classList.add('d-none');
+            classEffect([header, mainSection, details], 'd-none', false);
         })
     });
 
@@ -29,22 +27,16 @@ export const event = () => {
         switch (value.textContent) {
             case (projects.textContent):
                 numActive();
-                embed.classList.add('d-none');
-                skill.classList.add('d-none');
-                myProject.classList.remove('d-none');
+                classEffect([myProject, embed, skill], 'd-none', false);
                 classEffect([projects, skills, resume], 'active');
                 break;
             case (skills.textContent):
-                embed.classList.add('d-none');
-                myProject.classList.add('d-none');
-                skill.classList.remove('d-none');
+                classEffect([skill, myProject,embed], 'd-none', false);
                 classEffect([skills, projects, resume], 'active');
                 break;
             case (resume.textContent):
                 classEffect([resume, projects, skills], 'active');
-                skill.classList.add('d-none');
-                embed.classList.remove('d-none');
-                myProject.classList.add('d-none');
+                classEffect([embed, skill, myProject], 'd-none', false);
                 break;
         }
     }
@@ -63,17 +55,23 @@ export const event = () => {
     });
 }
 
-const classEffect = (addRemove, name) => {
+const classEffect = (addRemove, name, test=true) => {
     const [first, ...last] = addRemove;
-    first.classList.add(name);
-    last.forEach(elt => elt.classList.remove(name));
+    if (test){ 
+        first.classList.add(name);
+        last.forEach(elt => elt.classList.remove(name));
+    }else{
+        first.classList.remove(name);
+        last.forEach(elt => elt.classList.add(name));
+    }
+   
 }
 
 const numActive = () => {
     const num = document.querySelectorAll('.num');
     const prev = document.querySelector('#prev');
     const next = document.querySelector('#next');
-    let current = 1;
+    let current = 0;
 
     num.forEach(elt => {
         elt.addEventListener(('click'), () => {
@@ -84,7 +82,6 @@ const numActive = () => {
                     item.classList.remove('active');
                 }
             })
-            //alert(elt.textContent);
         })
     })
 
