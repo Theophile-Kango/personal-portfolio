@@ -206,9 +206,11 @@ $grey: #ccc;
     }
 
     #e-commission,
-    #nextweb{
-      width: 100%;
-      justify-content: center;
+    #nextweb,
+    #telegram-bot,
+    #matching-game{
+      width: 90%;
+      margin-left: 5%;
       .details{
         width: 30%;
         ul{
@@ -217,6 +219,17 @@ $grey: #ccc;
             width: 30%;
           }
         }
+        img{
+          object-fit: cover;
+        }
+      }
+    }
+    #matching-game{
+      align-items: flex-start;
+      .details{
+        position: relative;
+        top: 5vh;
+        height: 70vh;
       }
     }
 
