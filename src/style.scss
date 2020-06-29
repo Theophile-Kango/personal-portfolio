@@ -205,11 +205,18 @@ $grey: #ccc;
       }
     }
 
-    #e-commission{
+    #e-commission,
+    #nextweb{
       width: 100%;
       justify-content: center;
       .details{
         width: 30%;
+        ul{
+          li{
+            margin-left: 10%;
+            width: 30%;
+          }
+        }
       }
     }
 
