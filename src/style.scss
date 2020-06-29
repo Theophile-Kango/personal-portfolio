@@ -166,15 +166,15 @@ $grey: #ccc;
     font-weight: normal;
     font-size: .9em;
     min-height: 100vh;
-    #courses{
+    .item{
       height: 100vh;
       display: flex;
       width: 100%;
       justify-content: center;
       .details{
-        margin-top: 15vh;
+        margin-top: 10vh;
         width: 60%;
-        height: 70vh;
+        height: 80vh;
         order: 2;
         h2{
           text-align: center;
@@ -198,11 +198,21 @@ $grey: #ccc;
         }
       }
       img{
-        margin-top: 15vh;
-        height: 70vh;
+        margin-top: 10vh;
+        object-fit: fill;
+        height: 80vh;
         order: 1;
       }
     }
+
+    #e-commission{
+      width: 100%;
+      justify-content: center;
+      .details{
+        width: 30%;
+      }
+    }
+
     nav{
       display: flex;
       justify-content: center;
