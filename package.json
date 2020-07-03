@@ -1,5 +1,5 @@
 {
-  "name": "restaurant_page",
+  "name": "personal-portfolio",
   "version": "1.0.0",
   "description": "[![hire-badge](https://img.shields.io/badge/Consult%20/%20Hire%20Theophile-Click%20to%20Contact-brightgreen)](mailto:fadhili.kango@gmail.com ) [![Twitter Follow](https://img.shields.io/twitter/follow/Theophadh?label=Follow%20Theophile%20on%20Twitter&style=social)](https://twitter.com/Theophadh)",
   "private": true,
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Theophile-Kango/restaurant_page.git"
+    "url": "git+https://github.com/Theophile-Kango/personal-portfolio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Theophile-Kango/restaurant_page/issues"
+    "url": "https://github.com/Theophile-Kango/personal-portfolio/issues"
   },
-  "homepage": "https://github.com/Theophile-Kango/restaurant_page#readme",
+  "homepage": "https://github.com/Theophile-Kango/personal-portfolio#readme",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "bootstrap": "^4.5.0",
