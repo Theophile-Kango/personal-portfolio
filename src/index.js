@@ -11,7 +11,3 @@ const main = () => {
 }
 
 main();
-
-
-// const content = document.querySelector('#content');
-// content.appendChild(component());
