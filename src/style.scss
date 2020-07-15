@@ -198,6 +198,7 @@ $grey: #ccc;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-size: .9em;
+    width: 100%;
     min-height: 100vh;
     .item{
       height: 100vh;
@@ -292,6 +293,7 @@ $grey: #ccc;
       }
     }
   }
+
   article{
     display: flex;
     min-height: 100vh;
@@ -426,28 +428,29 @@ $grey: #ccc;
 }
 @media only screen and (max-width: 1000px) {
   .main{
-    article {
+    
+    .my-projects{
       width: 100%;
-      section{
-        div {
-          height: 170px;
-        }      
-        img {
-          width: 90%;
+      .item{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .details{
+          width: 100% !important;
+          padding: 10px !important;
+          margin-top: 0;
+          img{
+            object-fit: fill;
+          }
         }
       }
-    }
-    section{
-      aside {
-        width: 100%;
-        position: relative;
-      }    
-    }
-    .details{
-      ul {
-        height: 100px;
-        display: flex;
+      #courses{
+        img{
+          margin-left: 30%;
+          width: 40%;
+          height: 100vh;
+        }
       }
     } 
-  } 
+  }
 }
